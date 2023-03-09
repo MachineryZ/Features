@@ -11,4 +11,4 @@ APM因子模型的进阶版 开源证券 金融工程专题 20200307
 3. 以上得到的 40 个残差 $\epsilon_i$ 中，上午残差记为 $\epsilon_t^{am}$，下午残差记为 $\epsilon_t^{pm}$，进一步计算每日上午与下午残差的差值 $\delta_t = \epsilon_t^{am} - \epsilon_t^{pm}$
 4. 构造统计量 stat 来衡量上午与下午的残差的差异程度，计算公式：$stat = \mu(\delta_t) / (\sigma(\delta_t) / \sqrt N)$
 5. 为了消除动量因子的影响，将统计量 stat 对动量因子进行横截面回归：$stat_j = b\ Ret20_j + \epsilon_j$，其中 Ret20 为股票过去 20 日的收益率，代表动量因子
-6. 将回归得到的残差指作为 $APM^{raw}$ 因子
+6. 将回归得到的残差指作为 $APM^{raw}$ 因子 
