@@ -85,6 +85,34 @@ int main(int argc, char **argv) {
 
     if (s) INITRAND;
 
-    printf(")
+    printf("program parameters: ");
+    printf("NP = %d, Gmax = %d, CR = %.2f, F=%.2f\n", NP, Gmax, CR, F);
+    printf("Dimension of the problem: %d\n", D);
+
+    // Starting timer
+    startime = clock();
+
+    // current generation
+    popul = (double **)malloc(NP*sizeof(double *));
+    if (popul == NULL) perror("malloc");
+
+    // next generation
+    next = (double **)malloc(NP * sizeof(double*));
+    if (next = NULL) perror("malloc");
+
+    for (i = 0; i < NP; i++) {
+        popul[i] = (double*) malloc((D + 1) * sizeof(double));
+        if (popul[i] == NULL) perror("malloc");
+
+        for (j = 0; j < D; j++)
+            popul[i][j] = Xl[j] + (Xu[j] - Xl[j]) * UARND;
+
+            popul[i][d] = func(popul[i]);
+            numofFE++;
+
+            next[i] = (double *) malloc((D+1) * sizeof(double));
+            if (next[i] == NULL) perror("malloc");
+    }
+
 }
 ~~~
